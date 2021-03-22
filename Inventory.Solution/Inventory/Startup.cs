@@ -25,7 +25,7 @@ namespace Inventory
 			services.AddMvc();
 
 			services.AddEntityFrameworkMySql()
-	  			.AddDbContext<ToDoListContext>(options => options
+	  			.AddDbContext<InventoryContext>(options => options
 	 			 .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 		}
 

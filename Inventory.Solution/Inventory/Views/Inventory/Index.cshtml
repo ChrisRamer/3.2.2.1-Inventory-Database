@@ -1,1 +1,16 @@
-Hello, world!
+@{
+	Layout = "_Layout";
+}
+
+@using Inventory.Models;
+
+<h1>Games</h1>
+
+<ul>
+	@foreach (Game game in Model)
+	{
+		<li>game.Name</li>
+	}
+</ul>
+
+<p>@Html.ActionLink("Add a new game", "Create")</p>

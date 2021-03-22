@@ -1,0 +1,21 @@
+@{
+	Layout = "_Layout";
+}
+
+@model Inventory.Models.Game;
+
+<h1>Add a new game</h1>
+
+@using (Html.BeginForm())
+{
+	@Html.LabelFor(model => model.Name)
+	@Html.TextBoxFor(model => model.Name)
+	@Html.LabelFor(model => model.Year)
+	//@Html.TextBoxFor(model => model.Year) (can't do a year here easily)
+	<input type="date" name="Year">
+	@Html.LabelFor(model => model.Developer)
+	@Html.TextBoxFor(model => model.Developer)
+	<input type="submit" value="Add a new game"/>
+}
+
+<p>@Html.ActionLink("Show all games", "Index")</p>
