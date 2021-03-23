@@ -4,18 +4,18 @@
 
 @model Inventory.Models.Game;
 
-<h1>Add a new game</h1>
+<h1 id="title">Add a new game</h1>
 
 @using (Html.BeginForm())
 {
 	@Html.LabelFor(model => model.Name)
-	@Html.TextBoxFor(model => model.Name)
-	@Html.LabelFor(model => model.Year)
+	<br>@Html.TextBoxFor(model => model.Name)
+	<br>@Html.LabelFor(model => model.ReleaseDate)
 	//@Html.TextBoxFor(model => model.Year) (can't do a year here easily)
-	<input type="date" name="Year">
-	@Html.LabelFor(model => model.Developer)
-	@Html.TextBoxFor(model => model.Developer)
-	<input type="submit" value="Add a new game"/>
+	<br><input type="date" name="ReleaseDate">
+	<br>@Html.LabelFor(model => model.Developer)
+	<br>@Html.TextBoxFor(model => model.Developer)
+	<br><br><input type="submit" value="Add a new game"/>
 }
 
-<p>@Html.ActionLink("Show all games", "Index")</p>
+<br><p>@Html.ActionLink("Show all games", "Index")</p>

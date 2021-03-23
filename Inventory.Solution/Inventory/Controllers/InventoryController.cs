@@ -32,5 +32,26 @@ namespace Inventory.Controllers
 			_db.SaveChanges();
 			return RedirectToAction("Index");
 		}
+
+		public ActionResult Details(int id)
+		{
+			Game thisGame = _db.Games.FirstOrDefault(game => game.GameId == id);
+			return View(thisGame);
+		}
+
+		public ActionResult Delete(int id)
+		{
+			Game thisGame = _db.Games.FirstOrDefault(game => game.GameId == id);
+			return View(thisGame);
+		}
+
+		[HttpPost, ActionName("Delete")]
+		public ActionResult DeleteConfirmed(int id)
+		{
+			Game thisGame = _db.Games.FirstOrDefault(game => game.GameId == id);
+			_db.Remove(thisGame);
+			_db.SaveChanges();
+			return RedirectToAction("Index");
+		}
 	}
 }

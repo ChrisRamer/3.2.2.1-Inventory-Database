@@ -4,12 +4,12 @@
 
 @using Inventory.Models;
 
-<h1>Games</h1>
+<h1 id="title">Favorite Games</h1>
 
 <ul>
 	@foreach (Game game in Model)
 	{
-		<li>game.Name</li>
+		<lI><b>@Html.ActionLink($"{@game.Name}", "Details", new { id = game.GameId }) (@game.ReleaseDate.Year) by @game.Developer</lI>
 	}
 </ul>
 

@@ -1,0 +1,12 @@
+@{
+	Layout = "_Layout";
+}
+
+@model Inventory.Models.Game
+
+<h1 id="title">@Html.DisplayFor(model => model.Name)</h1><br>
+<h4>Release: @Html.DisplayFor(model => model.ReleaseDate.Month)/@Html.DisplayFor(model => model.ReleaseDate.Day)/@Html.DisplayFor(model => model.ReleaseDate.Year)</h4>
+<h4>Developer: @Html.DisplayFor(model => model.Developer)</h4>
+
+<br><p>@Html.ActionLink("Back to list of games", "Index")</p>
+<p>@Html.ActionLink("Remove this game from list", "Delete", new { id = Model.GameId })</p>
